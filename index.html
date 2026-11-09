@@ -1,55 +1,146 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<!-- ITBP 324 – Cloud Computing Fundamentals – Part 8 | Brew Café | Group 07 -->
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.7">
-  <style type="text/css">
-    body {background-color: #f2f4f6}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.2px Arial; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 15.0px}
-    p.p6 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p7 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Arial; color: #1a1a1a; -webkit-text-stroke: #1a1a1a; min-height: 14.0px}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; color: #1a1a1a; -webkit-text-stroke: #1a1a1a; min-height: 14.0px}
-    p.p10 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p11 {margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p12 {margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 12.0px 'Times New Roman'; color: #000000; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-    span.s2 {font: 12.0px Times; text-decoration: underline ; font-kerning: none; color: #0000e9; -webkit-text-stroke: 0px #0000e9}
-    span.s3 {font: 12.0px Times; font-kerning: none; color: #000000}
-    span.s4 {font: 12.0px Times; font-kerning: none}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brew Café</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #343B32;
+      background: #F8F6EF;
+      line-height: 1.75;
+    }
+    header {
+      background: #52634D;
+      color: #F8F6EF;
+      text-align: center;
+      padding: 68px 24px 58px;
+    }
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.3rem, 5vw, 3.5rem);
+      font-weight: normal;
+      letter-spacing: 6px;
+    }
+    header p { margin: 0; font-size: 1.08rem; color: #F1F0E8; }
+    .tag {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 7px 18px;
+      border: 1px solid #D5C49A;
+      border-radius: 30px;
+      color: #F8F6EF;
+      font-size: .9rem;
+      letter-spacing: .5px;
+    }
+    main {
+      width: min(100% - 40px, 1040px);
+      margin: 0 auto;
+      padding: 46px 0;
+    }
+    section {
+      background: #FFFFFF;
+      border: 1px solid #E6E7DD;
+      border-radius: 12px;
+      padding: 30px 34px;
+      margin-bottom: 28px;
+      box-shadow: 0 5px 18px rgba(52, 59, 50, .045);
+    }
+    h2 {
+      color: #52634D;
+      font-size: 1.7rem;
+      font-weight: normal;
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #D8DECF;
+    }
+    section > p { margin: 0; max-width: 850px; color: #555B50; }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #F3F5EF;
+      border: 1px solid #E1E6DA;
+      border-top: 3px solid #A9B69C;
+      border-radius: 9px;
+      padding: 22px 20px;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      color: #52634D;
+      font-size: 1.12rem;
+      font-weight: normal;
+    }
+    .card p { margin: 0; color: #5B6256; font-size: .96rem; line-height: 1.7; }
+    a { color: #52634D; text-decoration-color: #B49A6C; text-underline-offset: 3px; }
+    a:hover { color: #8B7650; }
+    footer {
+      background: #343B32;
+      color: #E9EDE3;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: .9rem;
+      line-height: 2;
+    }
+    footer strong { color: #D8C69E; font-weight: normal; }
+    @media (max-width: 760px) {
+      header { padding: 48px 20px; }
+      header h1 { letter-spacing: 3px; }
+      main { width: min(100% - 28px, 600px); padding: 28px 0; }
+      section { padding: 24px 20px; }
+      .services { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>BREW CAFÉ</b><b></b></span></h1>
-<p class="p2"><span class="s1"><b>Freshly brewed, bringing people together across the UAE.</b><b></b></span></p>
-<p class="p3"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><b>Sector:</b> Food and Beverage</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #760002; -webkit-text-stroke: #760002; background-color: #ffffff; min-height: 21.0px"><span class="s1"><b></b></span><br></h2>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>About Us</b></span></h2>
-<p class="p6"><span class="s1">Brew Café is a medium-sized café chain operating five branches across the United Arab Emirates. It provides food and beverages to customers while focusing on quality service and a welcoming café experience. The organization serves individuals, families and coffee lovers across its branches.</span></p>
-<p class="p7"><span class="s1"></span><br></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>Our Services</b></span></h2>
-<p class="p6"><span class="s1"><b>Coffee and Beverages</b><b></b></span></p>
-<p class="p6"><span class="s1">Offering a variety of freshly prepared coffee, tea and other beverages.</span></p>
-<p class="p6"><span class="s1"><b>Food and Café Dining</b><b></b></span></p>
-<p class="p6"><span class="s1">Providing food options and a comfortable environment for customers to enjoy their meals.</span></p>
-<p class="p6"><span class="s1"><b>Online Ordering and Customer Loyalty</b><b></b></span></p>
-<p class="p6"><span class="s1">Allowing customers to place orders online and benefit from loyalty services and promotions.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000; min-height: 23.0px"><span class="s1"><b></b></span><br></h2>
-<p class="p9"><span class="s1"></span><br></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>Why We Are Moving to the Cloud</b></span></h2>
-<p class="p6"><span class="s1">Moving to cloud computing will help Brew Café centralize information across its five branches, improve accessibility, and support more efficient management of sales and inventory. Microsoft Azure is our recommended cloud provider because of its range of cloud services, security features and UAE-based infrastructure.</span></p>
-<p class="p7"><span class="s1"></span><br></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; -webkit-text-stroke: #000000"><span class="s1"><b>Contact</b></span></h2>
-<p class="p6"><span class="s1">United Arab Emirates | <a href="mailto:info@brewcafe.example"><span class="s2">info@brewcafe.example</span></a> | +971 50 000 0000</span></p>
-<p class="p10"><span class="s1"></span><br></p>
-<p class="p7"><span class="s1"></span><br></p>
-<p class="p11"><span class="s1">This page is hosted on <b>GitHub Pages static website hosting</b>.</span></p>
-<p class="p11"><span class="s1">ITBP 324 – Cloud Computing Fundamentals, Fall 2026 | <b>Group 07</b><b></b></span></p>
-<p class="p12"><span class="s3">Members: </span><span class="s1">Sara Alyammahi</span><span class="s3">, </span><span class="s1">Latifa Albedwawi</span><span class="s4"> </span><span class="s3">, </span><span class="s1">Hessa Alshehhi</span><span class="s4"> </span><span class="s3">, </span><span class="s1">Maryam Aldahmani</span><span class="s4"><span class="Apple-converted-space"> </span></span><span class="s3"> </span><span class="s1">Mariam alkaabi<span class="Apple-converted-space"> </span></span></p>
-<p class="p11"><span class="s1">Deployed on: 09/11/2026</span></p>
+  <header>
+    <h1>BREW CAFÉ</h1>
+    <p>Freshly brewed, bringing people together across the UAE.</p>
+    <span class="tag">Sector: Food and Beverage</span>
+  </header>
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>Brew Café is a medium-sized café chain operating five branches across the United Arab Emirates. It provides food and beverages to customers while focusing on quality service and a welcoming café experience. The organization serves individuals, families and coffee lovers across its branches.</p>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="card">
+          <h3>Coffee and Beverages</h3>
+          <p>Offering a variety of freshly prepared coffee, tea and other beverages.</p>
+        </div>
+        <div class="card">
+          <h3>Food and Café Dining</h3>
+          <p>Providing food options and a comfortable environment for customers to enjoy their meals.</p>
+        </div>
+        <div class="card">
+          <h3>Online Ordering and Customer Loyalty</h3>
+          <p>Allowing customers to place orders online and benefit from loyalty services and promotions.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Why We Are Moving to the Cloud</h2>
+      <p>Moving to cloud computing will help Brew Café centralize information across its five branches, improve accessibility, and support more efficient management of sales and inventory. Microsoft Azure is our recommended cloud provider because of its range of cloud services, security features and UAE-based infrastructure.</p>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <p>United Arab Emirates &nbsp;|&nbsp; <a href="mailto:info@brewcafe.example">info@brewcafe.example</a> &nbsp;|&nbsp; +971 50 000 0000</p>
+    </section>
+  </main>
+  <footer>
+    This page is hosted on <strong>GitHub Pages static website hosting</strong><br>
+    ITBP 324 – Cloud Computing Fundamentals, Fall 2026 &nbsp;|&nbsp; <strong>Group 07</strong><br>
+    Members: Sara Alyammahi, Latifa Albedwawi, Hessa Alshehhi, Maryam Aldahmani, Mariam Alkaabi<br>
+    Deployed on: 09/11/2026
+  </footer>
 </body>
 </html>
